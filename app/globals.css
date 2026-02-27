@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
+/* UNIble Theme Tokens */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --unible-navy: #1F2A44; /* Deep Academic Navy */
+  --unible-bg: #F7F9FB;   /* Background */
+  --unible-text: #0f172a;
+  --unible-muted: #64748b;
+  --unible-card: #ffffff;
+  --unible-border: #e5e7eb;
+
+  /* Keep generic tokens too (for safety / future) */
+  --background: var(--unible-bg);
+  --foreground: var(--unible-text);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode (optional) */
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --unible-bg: #0b1220;
+    --unible-text: #e6edf7;
+    --unible-muted: #9aa8bd;
+    --unible-card: #0f1a2e;
+    --unible-border: #1f2a44;
+
+    --background: var(--unible-bg);
+    --foreground: var(--unible-text);
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
