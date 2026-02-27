@@ -6,7 +6,8 @@ export default function FeedbackPage() {
           Feedback
         </h1>
         <p className="mt-2 text-[var(--unible-muted)]">
-          Report bugs, request features, or tell us what feels confusing. This is the fastest way to help improve UNIble.
+          Report bugs, request features, or tell us what feels confusing. This is
+          the fastest way to help improve UNIble.
         </p>
       </div>
 
@@ -17,7 +18,13 @@ export default function FeedbackPage() {
           className="flex flex-col gap-5"
         >
           {/* Honeypot (스팸봇 방지) */}
-          <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+          <input
+            type="text"
+            name="_gotcha"
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+          />
 
           <div className="grid gap-4 md:grid-cols-2">
             <div className="flex flex-col gap-2">
@@ -70,20 +77,27 @@ export default function FeedbackPage() {
           {/* 페이지 자동 포함 (나중에 확장할 때도 유용) */}
           <input type="hidden" name="page" value="/feedback" />
 
-          {/* 옵션: 제출 후 리다이렉트 */}
-          <input type="hidden" name="_redirect" value="http://localhost:3000/feedback/thanks" />
+          {/* 제출 후 리다이렉트 */}
+          <input
+            type="hidden"
+            name="_redirect"
+            value="https://unibleapp.com/feedback/thanks"
+          />
 
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-xs text-[var(--unible-muted)]">
               For direct contact:{" "}
-              <a className="font-semibold text-[var(--unible-navy)] hover:underline" href="mailto:support@unibleapp.com">
+              <a
+                className="font-semibold text-[var(--unible-navy)] hover:underline"
+                href="mailto:support@unibleapp.com"
+              >
                 support@unibleapp.com
               </a>
             </div>
 
             <button
               type="submit"
-              className="rounded-xl bg-[var(--unible-navy)] px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+              className="w-full rounded-xl bg-[var(--unible-navy)] px-5 py-3 text-sm font-semibold text-white hover:opacity-95 sm:w-auto"
             >
               Submit Feedback
             </button>
