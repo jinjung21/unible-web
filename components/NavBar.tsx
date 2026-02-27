@@ -94,7 +94,7 @@ export default function NavBar() {
         </nav>
 
         {/* Mobile Hamburger */}
-        <div className="relative md:hidden" ref={menuRef}>
+        <div className="relative z-50 md:hidden" ref={menuRef}>
           <button
             onClick={() => setIsOpen((v) => !v)}
             aria-label="Open menu"
@@ -105,7 +105,12 @@ export default function NavBar() {
           </button>
 
           {isOpen && (
-            <div className="fixed inset-0 z-40 bg-black/10 backdrop-blur-[1px]" />
+            <button
+              type="button"
+              aria-label="Close menu overlay"
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-40 bg-black/10 backdrop-blur-[1px]"
+            />
           )}
 
           {isOpen && (
