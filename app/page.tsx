@@ -21,22 +21,24 @@ export default function HomePage() {
             and track assignments/exams/quizzes — all connected in one place.
           </p>
 
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-3">
             <Link
               href="/about"
-              className="rounded-xl bg-[var(--unible-navy)] px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+              className="w-full rounded-xl bg-[var(--unible-navy)] px-5 py-3 text-center text-sm font-semibold text-white hover:opacity-95"
             >
               About UNIble
             </Link>
+
             <Link
               href="/features"
-              className="rounded-xl border border-[var(--unible-border)] bg-white px-5 py-3 text-sm font-semibold text-[var(--unible-navy)] hover:bg-[var(--unible-bg)]"
+              className="w-full rounded-xl border border-[var(--unible-border)] bg-white px-5 py-3 text-center text-sm font-semibold text-[var(--unible-navy)] hover:bg-[var(--unible-bg)]"
             >
               Explore Features
             </Link>
+
             <Link
               href="/feedback"
-              className="rounded-xl border border-[var(--unible-border)] bg-white px-5 py-3 text-sm font-semibold text-[var(--unible-navy)] hover:bg-[var(--unible-bg)]"
+              className="w-full rounded-xl border border-[var(--unible-border)] bg-white px-5 py-3 text-center text-sm font-semibold text-[var(--unible-navy)] hover:bg-[var(--unible-bg)]"
             >
               Send Feedback
             </Link>
@@ -80,10 +82,9 @@ export default function HomePage() {
               Report bugs, suggest features, and tell us what feels confusing.
             </div>
           </div>
-
           <Link
             href="/feedback"
-            className="w-fit rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[var(--unible-navy)] hover:opacity-95"
+            className="w-full rounded-xl bg-white px-5 py-3 text-center text-sm font-semibold text-[var(--unible-navy)] hover:opacity-95 sm:w-fit"
           >
             Open Feedback Page
           </Link>

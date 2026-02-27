@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
-// ✅ Feedback 탭 제거 (Send Feedback 버튼만 남김)
 const navItems = [
   { href: "/about", label: "About UNIble" },
   { href: "/features", label: "Features" },
@@ -15,19 +14,21 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // 🔹 바깥 클릭 시 닫기
+  // 바깥 클릭/터치 시 닫기 (모바일 포함)
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    function handlePointerDownOutside(event: PointerEvent) {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("pointerdown", handlePointerDownOutside);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDownOutside);
+    };
   }, []);
 
-  // 🔹 ESC로 닫기 (모바일에서 특히 편함)
+  // ESC로 닫기
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") setIsOpen(false);
@@ -36,12 +37,21 @@ export default function NavBar() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // 메뉴 열렸을 때 스크롤 잠금 (모바일 UX)
+  useEffect(() => {
+    if (!isOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [isOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--unible-border)] bg-[var(--unible-bg)]/80 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4">
         {/* Logo */}
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          {/* 둥글게 보이도록: 흰 배경 + padding + contain */}
           <div className="relative h-10 w-10 flex-none overflow-hidden rounded-full bg-white shadow-sm ring-1 ring-black/5">
             <Image
               src="/logo512.png"
@@ -95,24 +105,29 @@ export default function NavBar() {
           </button>
 
           {isOpen && (
-            <div className="absolute right-0 mt-3 w-56 overflow-hidden rounded-2xl border border-[var(--unible-border)] bg-white shadow-lg">
+            <div className="fixed inset-0 z-40 bg-black/10 backdrop-blur-[1px]" />
+          )}
+
+          {isOpen && (
+            <div className="absolute right-0 z-50 mt-3 w-56 overflow-hidden rounded-2xl border border-[var(--unible-border)] bg-white shadow-lg">
               <div className="flex flex-col p-2">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="rounded-xl px-3 py-2 text-sm text-[var(--unible-muted)] hover:bg-[var(--unible-bg)] hover:text-[var(--unible-navy)]"
+                    className="rounded-xl px-3 py-3 text-sm text-[var(--unible-muted)] hover:bg-[var(--unible-bg)] hover:text-[var(--unible-navy)]"
                   >
                     {item.label}
                   </Link>
                 ))}
 
                 <div className="my-2 h-px bg-[var(--unible-border)]" />
+
                 <Link
                   href="/feedback"
                   onClick={() => setIsOpen(false)}
-                  className="rounded-xl bg-[var(--unible-navy)] px-3 py-2 text-center text-sm font-semibold text-white hover:opacity-95"
+                  className="rounded-xl bg-[var(--unible-navy)] px-3 py-3 text-center text-sm font-semibold text-white hover:opacity-95"
                 >
                   Send Feedback
                 </Link>
