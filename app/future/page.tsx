@@ -21,23 +21,23 @@ export default function FuturePage() {
           </ul>
         </Section>
 
-        <Section title="Feedback loop" subtitle="Make reporting issues effortless.">
+        <Section title="Campus Community" subtitle="Creating a digital hub for every campus.">
           <ul className="list-disc pl-5 text-sm text-[var(--unible-muted)]">
-            <li>Website feedback form (structured)</li>
-            <li>In-app Settings → Feedback → redirect to website</li>
-            <li>Optional: attach device/app version automatically</li>
+            <li>School-only news and updates</li>
+            <li>Real-time campus discussions</li>
+            <li>Community spaces exclusive to verified students</li>
           </ul>
         </Section>
 
-        <Section title="Schedule quality-of-life" subtitle="Editing speed + fewer mistakes.">
+        <Section title="Schedule Quality-of-Life" subtitle="Editing speed + fewer mistakes.">
           <ul className="list-disc pl-5 text-sm text-[var(--unible-muted)]">
             <li>Faster add/edit flow</li>
             <li>Better conflict handling and visuals</li>
-            <li>More customization (colors, display options)</li>
+            <li>Automatic schedule creation from a photo</li>
           </ul>
         </Section>
 
-        <Section title="Friends & privacy" subtitle="Share, but stay in control.">
+        <Section title="Friends & Privacy" subtitle="Share, but stay in control.">
           <ul className="list-disc pl-5 text-sm text-[var(--unible-muted)]">
             <li>Schedule visibility settings (per friend / per group)</li>
             <li>Block / report tools (basic safety)</li>
@@ -45,7 +45,7 @@ export default function FuturePage() {
           </ul>
         </Section>
 
-        <Section title="To-Do improvements" subtitle="Deadline tracking that feels natural.">
+        <Section title="To-Do Improvements" subtitle="Deadline tracking that feels natural.">
           <ul className="list-disc pl-5 text-sm text-[var(--unible-muted)]">
             <li>More task types / better sorting</li>
             <li>Quick add templates</li>
@@ -53,11 +53,11 @@ export default function FuturePage() {
           </ul>
         </Section>
 
-        <Section title="School support" subtitle="Scale beyond one campus smoothly.">
+        <Section title="School Support" subtitle="Scale UNIble across campuses with full integration.">
           <ul className="list-disc pl-5 text-sm text-[var(--unible-muted)]">
-            <li>More universities</li>
-            <li>Better school selection flow</li>
-            <li>Eventually: automated school email verification improvements</li>
+            <li>Direct integration with universities</li>
+            <li>Full course catalog loading for each school</li>
+            <li>Official school-wide email verification system</li>
           </ul>
         </Section>
       </div>
