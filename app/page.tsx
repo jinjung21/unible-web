@@ -12,7 +12,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-3xl font-semibold tracking-tight text-[var(--unible-navy)] sm:text-4xl">
-            Your campus life, organized.
+            A better way to manage campus life.
           </h1>
 
           <p className="max-w-2xl text-base leading-relaxed text-[var(--unible-muted)]">
