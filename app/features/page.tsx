@@ -3,62 +3,57 @@ import Section from "../../components/Section";
 const featureCards = [
   {
     title: "Schedule",
-    subtitle: "Build, manage, and switch across academic terms with ease.",
+    subtitle: "Plan your week across multiple academic years and terms.",
     badge: "Multi-term",
     items: [
       "Add, edit, and organize courses and meetings",
-      "Manage multiple academic years and multiple terms in one system",
-      "Color-coded timetable blocks for better readability",
-      "10-minute class reminders before each session",
-      "Academic snapshot support for a clearer semester view",
+      "Manage multiple academic years and terms in one system",
+      "Use color-coded timetable blocks for faster scanning",
+      "Get 10-minute reminders before each class",
     ],
   },
   {
     title: "Friends",
-    subtitle: "Stay connected and coordinate around class schedules.",
+    subtitle: "Coordinate around real class schedules, not endless messaging.",
     badge: "Social",
     items: [
       "Send and accept friend requests",
       "View friends’ schedules in a clean weekly grid",
-      "See live friend status like In class or Free now",
-      "Find shared free time across the week",
-      "Coordinate around classes without endless back-and-forth messaging",
+      "See live status like In class or Free now",
+      "Find overlapping shared free time across the week",
     ],
   },
   {
     title: "To-Do",
-    subtitle: "Track deadlines across classes in one place.",
+    subtitle: "Keep coursework and deadlines tied to your academic routine.",
     badge: "Productivity",
     items: [
-      "Manage assignments, exams, quizzes, and deadlines",
+      "Manage assignments, quizzes, exams, and deadlines",
       "See upcoming due dates at a glance",
-      "Keep course-related tasks tied to your schedule",
-      "Due widget support for faster daily checking",
-      "Stay on top of coursework without juggling multiple apps",
+      "Keep course-related tasks connected to your schedule",
+      "Use widgets for faster daily checking",
     ],
   },
   {
     title: "Grades",
-    subtitle: "Monitor course performance with flexible grading support.",
+    subtitle: "Track performance by term, by course, and by component.",
     badge: "Academic",
     items: [
-      "Track grades by term and by course",
+      "Track grades across multiple terms and courses",
       "Add weighted components like assignments, quizzes, and exams",
-      "Separate completed scores from predicted results for cleaner tracking",
-      "Mark courses as Completed or In Progress for more accurate GPA calculation",
-      "Manage custom grading schemes with editable cutoffs, letters, and GPA values",
+      "Separate actual results from predicted results",
+      "Use custom grading schemes with editable cutoffs and GPA values",
     ],
   },
   {
     title: "Overview",
-    subtitle: "A mobile-first home experience for daily planning.",
+    subtitle: "A mobile-first home experience for everyday student life.",
     badge: "Daily",
     items: [
-      "Today’s schedule summary on the home screen",
-      "Quick access to your next class and next due item",
-      "Schedule widget support for instant timetable access",
-      "Your schedules and grades stay synced across devices",
-      "Designed to help students check everything important in seconds",
+      "See today’s schedule summary on the home screen",
+      "Quickly check your next class and next due item",
+      "Access schedule widgets for faster daily use",
+      "Keep schedules and grades consistent across devices",
     ],
   },
 ];
@@ -77,34 +72,37 @@ export default function FeaturesPage() {
           </h1>
           <p className="mt-2 max-w-2xl text-[15px] leading-7 text-[var(--unible-muted)]">
             UNIble brings schedules, grades, deadlines, and friends into one
-            student-focused system so your academic life feels organized, not scattered.
+            student-focused system so your academic life feels organized, not
+            scattered.
           </p>
         </div>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-5 md:grid-cols-2">
         {featureCards.map((card) => (
           <Section key={card.title} title="" subtitle="">
-            <div className="flex h-full flex-col gap-4">
+            <div className="flex h-full flex-col">
               <div className="flex items-start justify-between gap-3">
-                <div>
-                  <h2 className="text-xl font-semibold tracking-tight text-[var(--unible-navy)]">
+                <div className="min-w-0">
+                  <h2 className="text-[24px] font-semibold tracking-tight text-[var(--unible-navy)]">
                     {card.title}
                   </h2>
-                  <p className="mt-1 text-sm leading-6 text-[var(--unible-muted)]">
+                  <p className="mt-2 max-w-[34ch] text-[15px] leading-7 text-[var(--unible-muted)]">
                     {card.subtitle}
                   </p>
                 </div>
 
-                <span className="shrink-0 rounded-full border border-[var(--unible-border)] bg-[var(--unible-surface)] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-[var(--unible-muted)]">
+                <span className="mt-1 shrink-0 rounded-full border border-[var(--unible-border)] bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--unible-muted)]">
                   {card.badge}
                 </span>
               </div>
 
-              <ul className="space-y-2 text-sm leading-6 text-[var(--unible-muted)]">
+              <div className="mt-6 h-px w-full bg-[var(--unible-border)]" />
+
+              <ul className="mt-5 space-y-1.5 text-[14px] leading-6 text-[var(--unible-muted)]">
                 {card.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--unible-green)]" />
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-[8px] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--unible-navy)]/70" />
                     <span>{item}</span>
                   </li>
                 ))}
