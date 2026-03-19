@@ -9,89 +9,114 @@ export default function TermsPage() {
         Last updated: {new Date().toLocaleDateString()}
       </p>
 
+      {/* 1 */}
       <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
         <h2 className="text-base font-semibold text-[var(--unible-navy)]">
           1. Use of Service
         </h2>
         <p>
-          UNIble provides tools for university students to manage schedules,
-          tasks, and social coordination. By using the service, you agree to
-          use it responsibly and in compliance with applicable laws.
+          UNIble provides tools for managing schedules and coordinating with
+          others. By using the service, you agree to comply with applicable
+          laws and use the service responsibly.
         </p>
       </section>
 
+      {/* 2 */}
       <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
         <h2 className="text-base font-semibold text-[var(--unible-navy)]">
           2. Accounts
         </h2>
         <p>
-          Some features of UNIble require an account. You are responsible for
-          maintaining the accuracy of your account information and for
-          safeguarding access to your account.
+          You are responsible for maintaining the security of your account
+          and ensuring that your information is accurate.
         </p>
       </section>
 
+      {/* 3 */}
       <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
         <h2 className="text-base font-semibold text-[var(--unible-navy)]">
           3. User Content
         </h2>
         <p>
-          Users may create and store content within the service, such as
-          schedules, tasks, and profile information. You retain ownership of
-          your content, but grant UNIble permission to store and process that
-          content in order to operate the service.
+          You retain ownership of content you create, but grant UNIble a
+          license to store and process that content for operating the service.
         </p>
       </section>
 
+      {/* 4 */}
       <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
         <h2 className="text-base font-semibold text-[var(--unible-navy)]">
           4. Acceptable Use
         </h2>
         <p>
-          You agree not to misuse the service. This includes activities such
-          as harassment, abuse of other users, attempting to disrupt the
-          platform, or using the service for unlawful purposes.
+          You agree not to misuse the service, including harassment, abuse,
+          unlawful activity, or attempts to disrupt the platform.
         </p>
       </section>
 
+      {/* 5 */}
       <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
         <h2 className="text-base font-semibold text-[var(--unible-navy)]">
-          5. Service Availability
+          5. Termination
         </h2>
         <p>
-          We aim to keep UNIble reliable and available, but we do not guarantee
-          uninterrupted or error-free operation. Features may change or be
-          updated over time.
+          We reserve the right to suspend or terminate your account if you
+          violate these Terms or misuse the service.
         </p>
       </section>
 
+      {/* 6 */}
       <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
         <h2 className="text-base font-semibold text-[var(--unible-navy)]">
-          6. Limitation of Liability
+          6. Service Availability
         </h2>
         <p>
-          UNIble is provided "as is". To the fullest extent permitted by law,
-          we are not liable for indirect, incidental, or consequential damages
-          resulting from the use of the service.
+          The service may be modified, suspended, or discontinued at any time.
+          We do not guarantee uninterrupted or error-free operation.
         </p>
       </section>
 
+      {/* 7 */}
       <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
         <h2 className="text-base font-semibold text-[var(--unible-navy)]">
-          7. Changes to Terms
+          7. Limitation of Liability
         </h2>
         <p>
-          We may update these Terms from time to time. Continued use of the
-          service after changes means you accept the updated terms.
+          The service is provided "as is". You use it at your own risk. UNIble
+          is not responsible for any indirect damages, data loss, or service
+          interruptions.
         </p>
       </section>
 
+      {/* 8 */}
       <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
         <h2 className="text-base font-semibold text-[var(--unible-navy)]">
-          8. Contact
+          8. Governing Law
         </h2>
         <p>
-          Questions about these Terms? Contact{" "}
+          These Terms shall be governed by the laws of your jurisdiction,
+          without regard to conflict of law principles.
+        </p>
+      </section>
+
+      {/* 9 */}
+      <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
+        <h2 className="text-base font-semibold text-[var(--unible-navy)]">
+          9. Changes to Terms
+        </h2>
+        <p>
+          Continued use of the service after updates constitutes acceptance
+          of the revised Terms.
+        </p>
+      </section>
+
+      {/* 10 */}
+      <section className="space-y-3 text-sm leading-relaxed text-[var(--unible-muted)]">
+        <h2 className="text-base font-semibold text-[var(--unible-navy)]">
+          10. Contact
+        </h2>
+        <p>
+          Contact{" "}
           <a
             href="mailto:contact@unibleapp.com"
             className="text-[var(--unible-navy)] underline"
