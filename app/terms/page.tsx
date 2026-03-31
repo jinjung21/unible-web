@@ -19,6 +19,11 @@ export default function TermsPage() {
           others. By using the service, you agree to comply with applicable
           laws and use the service responsibly.
         </p>
+        <p>
+          Access to UNIble requires a valid university email address. We
+          reserve the right to restrict access to specific institutions at
+          our discretion.
+        </p>
       </section>
 
       {/* 2 */}
@@ -28,7 +33,9 @@ export default function TermsPage() {
         </h2>
         <p>
           You are responsible for maintaining the security of your account
-          and ensuring that your information is accurate.
+          and ensuring that your information is accurate. Each person may
+          only maintain one account. Usernames are unique and
+          non-transferable.
         </p>
       </section>
 
