@@ -53,15 +53,9 @@ export default function HomePage() {
         <div className="bg-[var(--unible-navy)] px-6 py-6 sm:px-8 sm:py-7">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-col gap-2">
-              <div className="flex">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-400/15 px-2.5 py-1 text-xs font-medium text-amber-300 ring-1 ring-amber-400/25">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
-                  App Review in Progress
-                </span>
-              </div>
               <div className="text-lg font-semibold text-white">Download UNIble</div>
               <div className="text-sm leading-relaxed text-white/70">
-                Coming to iOS via the App Store. Download link goes live once approved.
+                Available on iOS. Free to download on the App Store.
               </div>
             </div>
             <Link

@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// ─── 링크 승인 후 여기만 수정하세요 ──────────────────────────────────────
+// ─── App Store 링크 교체 시 여기만 수정하세요 ─────────────────────────────
 const APP_STORE_URL = "#"; // TODO: App Store 링크로 교체
-const IN_REVIEW = true; // 심사 통과 후 false로 변경
 // ─────────────────────────────────────────────────────────────────────────
 
 function AppleIcon({ className = "h-6 w-6" }: { className?: string }) {
@@ -41,18 +40,8 @@ export default function DownloadPage() {
         <div className="bg-[var(--unible-navy)] px-6 pb-8 pt-8 sm:px-10 sm:pt-10">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
 
-            {/* Left: text + buttons */}
+            {/* Left: text + button */}
             <div className="flex flex-col gap-5">
-              {/* Status pill */}
-              {IN_REVIEW && (
-                <div className="flex">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-400/15 px-3 py-1 text-xs font-medium text-amber-300 ring-1 ring-amber-400/25">
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
-                    App Review in Progress
-                  </span>
-                </div>
-              )}
-
               <div>
                 <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                   Download UNIble
@@ -63,35 +52,19 @@ export default function DownloadPage() {
                 </p>
               </div>
 
-              {/* Store button */}
+              {/* App Store button */}
               <div className="flex">
-                {IN_REVIEW ? (
-                  <div className="inline-flex cursor-not-allowed items-center gap-3 rounded-xl bg-white/10 px-5 py-3 ring-1 ring-white/15">
-                    <AppleIcon />
-                    <div className="flex flex-col text-left leading-tight">
-                      <span className="text-[10px] font-normal text-white/40">Download on the</span>
-                      <span className="text-sm font-semibold text-white/50">App Store</span>
-                    </div>
+                <a
+                  href={APP_STORE_URL}
+                  className="inline-flex items-center gap-3 rounded-xl bg-white px-5 py-3 transition-opacity hover:opacity-95"
+                >
+                  <AppleIcon className="h-6 w-6 text-[var(--unible-navy)]" />
+                  <div className="flex flex-col text-left leading-tight">
+                    <span className="text-[10px] font-normal text-[var(--unible-muted)]">Download on the</span>
+                    <span className="text-sm font-semibold text-[var(--unible-navy)]">App Store</span>
                   </div>
-                ) : (
-                  <a
-                    href={APP_STORE_URL}
-                    className="inline-flex items-center gap-3 rounded-xl bg-white px-5 py-3 transition-opacity hover:opacity-95"
-                  >
-                    <AppleIcon className="h-6 w-6 text-[var(--unible-navy)]" />
-                    <div className="flex flex-col text-left leading-tight">
-                      <span className="text-[10px] font-normal text-[var(--unible-muted)]">Download on the</span>
-                      <span className="text-sm font-semibold text-[var(--unible-navy)]">App Store</span>
-                    </div>
-                  </a>
-                )}
+                </a>
               </div>
-
-              {IN_REVIEW && (
-                <p className="text-xs text-white/40">
-                  Links will be activated once app review is complete.
-                </p>
-              )}
             </div>
 
             {/* Right: app icon */}
@@ -137,11 +110,6 @@ export default function DownloadPage() {
             <h2 className="text-base font-semibold text-[var(--unible-navy)]">iOS</h2>
             <p className="text-xs text-[var(--unible-muted)]">iPhone · iPad</p>
           </div>
-          {IN_REVIEW && (
-            <span className="ml-auto inline-flex items-center rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-600 ring-1 ring-amber-200">
-              In Review
-            </span>
-          )}
         </div>
         <div className="mt-5 space-y-2">
           {[
@@ -156,20 +124,13 @@ export default function DownloadPage() {
           ))}
         </div>
         <div className="mt-5">
-          {IN_REVIEW ? (
-            <div className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--unible-border)] bg-[var(--unible-bg)] px-4 py-2.5 text-sm font-medium text-[var(--unible-muted)]">
-              <AppleIcon className="h-4 w-4" />
-              Review in Progress
-            </div>
-          ) : (
-            <a
-              href={APP_STORE_URL}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--unible-navy)] px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-95"
-            >
-              <AppleIcon className="h-4 w-4" />
-              Download on the App Store
-            </a>
-          )}
+          <a
+            href={APP_STORE_URL}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--unible-navy)] px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-95"
+          >
+            <AppleIcon className="h-4 w-4" />
+            Download on the App Store
+          </a>
         </div>
       </div>
 
@@ -208,9 +169,9 @@ export default function DownloadPage() {
       {/* ── CTA bottom ──────────────────────────────────────────────── */}
       <div className="flex flex-col gap-4 rounded-2xl border border-[var(--unible-border)] bg-[var(--unible-navy)] p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:p-7">
         <div>
-          <div className="text-base font-semibold">Have feedback before launch?</div>
+          <div className="text-base font-semibold">Have a question or found a bug?</div>
           <div className="mt-0.5 text-sm text-white/70">
-            Help shape UNIble before it goes live. Bug reports and suggestions welcome.
+            Your feedback helps make UNIble better for everyone.
           </div>
         </div>
         <Link
