@@ -61,7 +61,7 @@ export default function HomePage() {
               </div>
               <div className="text-lg font-semibold text-white">Download UNIble</div>
               <div className="text-sm leading-relaxed text-white/70">
-                Coming to iOS and Android. Download links go live once approved.
+                Coming to iOS via the App Store. Download link goes live once approved.
               </div>
             </div>
             <Link
@@ -76,12 +76,14 @@ export default function HomePage() {
           </div>
         </div>
         <div className="flex items-center gap-4 border-t border-[var(--unible-border)] bg-[var(--unible-bg)] px-6 py-3 sm:px-8">
-          {["iOS", "Android"].map((p) => (
-            <div key={p} className="flex items-center gap-1.5 text-xs text-[var(--unible-muted)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--unible-navy)]/40" />
-              {p}
-            </div>
-          ))}
+          <div className="flex items-center gap-1.5 text-xs text-[var(--unible-muted)]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--unible-navy)]/40" />
+            iOS only
+          </div>
+          <div className="flex items-center gap-1.5 text-xs text-[var(--unible-muted)]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--unible-navy)]/40" />
+            App Store
+          </div>
         </div>
       </div>
 

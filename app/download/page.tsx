@@ -3,7 +3,6 @@ import Image from "next/image";
 
 // ─── 링크 승인 후 여기만 수정하세요 ──────────────────────────────────────
 const APP_STORE_URL = "#"; // TODO: App Store 링크로 교체
-const PLAY_STORE_URL = "#"; // TODO: Google Play 링크로 교체
 const IN_REVIEW = true; // 심사 통과 후 false로 변경
 // ─────────────────────────────────────────────────────────────────────────
 
@@ -11,14 +10,6 @@ function AppleIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-    </svg>
-  );
-}
-
-function PlayIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.965c.584.34.584 1.175 0 1.515l-2.14 1.238-2.536-2.536 2.536-2.536 2.14 1.319zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z" />
     </svg>
   );
 }
@@ -68,13 +59,12 @@ export default function DownloadPage() {
                 </h1>
                 <p className="mt-2.5 max-w-sm text-[15px] leading-relaxed text-white/70">
                   Your complete university companion. Manage schedules, grades,
-                  deadlines, and campus coordination — all in one clean app.
+                  deadlines, and campus coordination — all in one clean iOS app.
                 </p>
               </div>
 
-              {/* Store buttons */}
-              <div className="flex flex-col gap-3 sm:flex-row">
-                {/* App Store */}
+              {/* Store button */}
+              <div className="flex">
                 {IN_REVIEW ? (
                   <div className="inline-flex cursor-not-allowed items-center gap-3 rounded-xl bg-white/10 px-5 py-3 ring-1 ring-white/15">
                     <AppleIcon />
@@ -92,28 +82,6 @@ export default function DownloadPage() {
                     <div className="flex flex-col text-left leading-tight">
                       <span className="text-[10px] font-normal text-[var(--unible-muted)]">Download on the</span>
                       <span className="text-sm font-semibold text-[var(--unible-navy)]">App Store</span>
-                    </div>
-                  </a>
-                )}
-
-                {/* Google Play */}
-                {IN_REVIEW ? (
-                  <div className="inline-flex cursor-not-allowed items-center gap-3 rounded-xl bg-white/10 px-5 py-3 ring-1 ring-white/15">
-                    <PlayIcon />
-                    <div className="flex flex-col text-left leading-tight">
-                      <span className="text-[10px] font-normal text-white/40">Get it on</span>
-                      <span className="text-sm font-semibold text-white/50">Google Play</span>
-                    </div>
-                  </div>
-                ) : (
-                  <a
-                    href={PLAY_STORE_URL}
-                    className="inline-flex items-center gap-3 rounded-xl bg-white px-5 py-3 transition-opacity hover:opacity-95"
-                  >
-                    <PlayIcon className="h-5 w-5 text-[var(--unible-navy)]" />
-                    <div className="flex flex-col text-left leading-tight">
-                      <span className="text-[10px] font-normal text-[var(--unible-muted)]">Get it on</span>
-                      <span className="text-sm font-semibold text-[var(--unible-navy)]">Google Play</span>
                     </div>
                   </a>
                 )}
@@ -159,99 +127,49 @@ export default function DownloadPage() {
         </div>
       </div>
 
-      {/* ── Platform cards ──────────────────────────────────────────── */}
-      <div className="grid gap-5 md:grid-cols-2">
-
-        {/* iOS */}
-        <div className="rounded-2xl border border-[var(--unible-border)] bg-white p-6 shadow-sm">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[var(--unible-bg)]">
-              <AppleIcon className="h-5 w-5 text-[var(--unible-navy)]" />
-            </div>
-            <div>
-              <h2 className="text-base font-semibold text-[var(--unible-navy)]">iOS</h2>
-              <p className="text-xs text-[var(--unible-muted)]">iPhone · iPad</p>
-            </div>
-            {IN_REVIEW && (
-              <span className="ml-auto inline-flex items-center rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-600 ring-1 ring-amber-200">
-                In Review
-              </span>
-            )}
+      {/* ── Platform card ───────────────────────────────────────────── */}
+      <div className="rounded-2xl border border-[var(--unible-border)] bg-white p-6 shadow-sm">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[var(--unible-bg)]">
+            <AppleIcon className="h-5 w-5 text-[var(--unible-navy)]" />
           </div>
-          <div className="mt-5 space-y-2">
-            {[
-              "Requires iOS 16.0 or later",
-              "Optimised for iPhone and iPad",
-              "Available on the App Store",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm text-[var(--unible-muted)]">
-                <span className="h-1.5 w-1.5 flex-none rounded-full bg-[var(--unible-navy)]/40" />
-                {item}
-              </div>
-            ))}
+          <div>
+            <h2 className="text-base font-semibold text-[var(--unible-navy)]">iOS</h2>
+            <p className="text-xs text-[var(--unible-muted)]">iPhone · iPad</p>
           </div>
-          <div className="mt-5">
-            {IN_REVIEW ? (
-              <div className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--unible-border)] bg-[var(--unible-bg)] px-4 py-2.5 text-sm font-medium text-[var(--unible-muted)]">
-                <AppleIcon className="h-4 w-4" />
-                Review in Progress
-              </div>
-            ) : (
-              <a
-                href={APP_STORE_URL}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--unible-navy)] px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-95"
-              >
-                <AppleIcon className="h-4 w-4" />
-                Download for iOS
-              </a>
-            )}
-          </div>
+          {IN_REVIEW && (
+            <span className="ml-auto inline-flex items-center rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-600 ring-1 ring-amber-200">
+              In Review
+            </span>
+          )}
         </div>
-
-        {/* Android */}
-        <div className="rounded-2xl border border-[var(--unible-border)] bg-white p-6 shadow-sm">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[var(--unible-bg)]">
-              <PlayIcon className="h-5 w-5 text-[var(--unible-navy)]" />
+        <div className="mt-5 space-y-2">
+          {[
+            "Requires iOS 16.0 or later",
+            "Optimised for iPhone and iPad",
+            "Available on the App Store",
+          ].map((item) => (
+            <div key={item} className="flex items-center gap-2 text-sm text-[var(--unible-muted)]">
+              <span className="h-1.5 w-1.5 flex-none rounded-full bg-[var(--unible-navy)]/40" />
+              {item}
             </div>
-            <div>
-              <h2 className="text-base font-semibold text-[var(--unible-navy)]">Android</h2>
-              <p className="text-xs text-[var(--unible-muted)]">Phone · Tablet</p>
+          ))}
+        </div>
+        <div className="mt-5">
+          {IN_REVIEW ? (
+            <div className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--unible-border)] bg-[var(--unible-bg)] px-4 py-2.5 text-sm font-medium text-[var(--unible-muted)]">
+              <AppleIcon className="h-4 w-4" />
+              Review in Progress
             </div>
-            {IN_REVIEW && (
-              <span className="ml-auto inline-flex items-center rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-600 ring-1 ring-amber-200">
-                In Review
-              </span>
-            )}
-          </div>
-          <div className="mt-5 space-y-2">
-            {[
-              "Requires Android 8.0 or later",
-              "Compatible with phones and tablets",
-              "Available on Google Play",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm text-[var(--unible-muted)]">
-                <span className="h-1.5 w-1.5 flex-none rounded-full bg-[var(--unible-navy)]/40" />
-                {item}
-              </div>
-            ))}
-          </div>
-          <div className="mt-5">
-            {IN_REVIEW ? (
-              <div className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--unible-border)] bg-[var(--unible-bg)] px-4 py-2.5 text-sm font-medium text-[var(--unible-muted)]">
-                <PlayIcon className="h-4 w-4" />
-                Review in Progress
-              </div>
-            ) : (
-              <a
-                href={PLAY_STORE_URL}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--unible-navy)] px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-95"
-              >
-                <PlayIcon className="h-4 w-4" />
-                Download for Android
-              </a>
-            )}
-          </div>
+          ) : (
+            <a
+              href={APP_STORE_URL}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--unible-navy)] px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-95"
+            >
+              <AppleIcon className="h-4 w-4" />
+              Download on the App Store
+            </a>
+          )}
         </div>
       </div>
 
