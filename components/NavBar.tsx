@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 
 const navItems = [
   { href: "/about", label: "About UNIble" },
+  { href: "/download", label: "Download" },
   { href: "/features", label: "Features" },
   { href: "/future", label: "Future" },
 ];

@@ -48,6 +48,43 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Download */}
+      <div className="overflow-hidden rounded-2xl border border-[var(--unible-border)] shadow-sm">
+        <div className="bg-[var(--unible-navy)] px-6 py-6 sm:px-8 sm:py-7">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-2">
+              <div className="flex">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-400/15 px-2.5 py-1 text-xs font-medium text-amber-300 ring-1 ring-amber-400/25">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
+                  App Review in Progress
+                </span>
+              </div>
+              <div className="text-lg font-semibold text-white">Download UNIble</div>
+              <div className="text-sm leading-relaxed text-white/70">
+                Coming to iOS and Android. Download links go live once approved.
+              </div>
+            </div>
+            <Link
+              href="/download"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[var(--unible-navy)] transition-opacity hover:opacity-95 sm:w-fit sm:flex-none"
+            >
+              See Download Page
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+        <div className="flex items-center gap-4 border-t border-[var(--unible-border)] bg-[var(--unible-bg)] px-6 py-3 sm:px-8">
+          {["iOS", "Android"].map((p) => (
+            <div key={p} className="flex items-center gap-1.5 text-xs text-[var(--unible-muted)]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--unible-navy)]/40" />
+              {p}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Highlights */}
       <div className="grid gap-5 md:grid-cols-2">
         <Section
