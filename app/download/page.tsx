@@ -113,7 +113,7 @@ export default function DownloadPage() {
         </div>
         <div className="mt-5 space-y-2">
           {[
-            "Requires iOS 16.0 or later",
+            "Requires iOS 17.5 or later",
             "Optimised for iPhone and iPad",
             "Available on the App Store",
           ].map((item) => (
