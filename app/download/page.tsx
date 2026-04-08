@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // ─── App Store 링크 교체 시 여기만 수정하세요 ─────────────────────────────
-const APP_STORE_URL = "#"; // TODO: App Store 링크로 교체
+const APP_STORE_URL = "https://apps.apple.com/us/app/unible/id6759705942";
 // ─────────────────────────────────────────────────────────────────────────
 
 function AppleIcon({ className = "h-6 w-6" }: { className?: string }) {
